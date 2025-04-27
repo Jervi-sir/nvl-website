@@ -1,0 +1,35 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "*.html",
+        "use": "@vercel/static"
+      },
+      {
+        "src": "css/**/*",
+        "use": "@vercel/static"
+      },
+      {
+        "src": "js/**/*",
+        "use": "@vercel/static"
+      },
+      {
+        "src": "images/**/*",
+        "use": "@vercel/static"
+      },
+      {
+        "src": "icomoon/**/*",
+        "use": "@vercel/static"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(css|js|images|icomoon)/(.*)",
+        "dest": "/$1/$2"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "/index.html"
+      }
+    ]
+  }
